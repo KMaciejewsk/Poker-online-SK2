@@ -1,0 +1,204 @@
+Serwer:
+
+konrad@konrad-virtual-machine:~/Desktop/pokerek$ ./serwer
+Dealer server running on port 8080...
+Player 4 connected.
+Player 5 connected.
+Players connected, starting the game...
+Received round start confirmation from 4
+Received round start confirmation from 5
+Dealt table card: 9 of Spades
+Received card confirmation from 4
+Received card confirmation from 5
+Dealt table card: 7 of Spades
+Received card confirmation from 4
+Received card confirmation from 5
+Dealt table card: King of Spades
+Received card confirmation from 4
+Received card confirmation from 5
+Dealt card to player 4: 3 of Hearts
+Received card confirmation from 4
+Dealt card to player 5: 5 of Diamonds
+Received card confirmation from 5
+Dealt card to player 4: Ace of Spades
+Received card confirmation from 4
+Dealt card to player 5: 6 of Hearts
+Received card confirmation from 5
+Waiting for bet from Received bet: 1 from 4
+Waiting for bet from Received bet: 1 from 5
+The winner is player: 4
+Received winnings confirmation from 4
+Received winnings confirmation from 5
+Asking player 4 if they want to continue...
+Player 4 wants to continue.
+Asking player 5 if they want to continue...
+Player 5 wants to continue.
+Player 6 connected.
+Players connected, starting the game...
+Received round start confirmation from 4
+Received round start confirmation from 5
+Received round start confirmation from 6
+Dealt table card: Queen of Diamonds
+Received card confirmation from 4
+Received card confirmation from 5
+Received card confirmation from 6
+Dealt table card: 7 of Hearts
+Received card confirmation from 4
+Received card confirmation from 5
+Received card confirmation from 6
+Dealt table card: King of Hearts
+Received card confirmation from 4
+Received card confirmation from 5
+Received card confirmation from 6
+Dealt card to player 4: Ace of Diamonds
+Received card confirmation from 4
+Dealt card to player 5: Jack of Spades
+Received card confirmation from 5
+Dealt card to player 6: Jack of Clubs
+Received card confirmation from 6
+Dealt card to player 4: 10 of Hearts
+Received card confirmation from 4
+Dealt card to player 5: 2 of Spades
+Received card confirmation from 5
+Dealt card to player 6: 8 of Diamonds
+Received card confirmation from 6
+Waiting for bet from Received bet: 1 from 4
+Waiting for bet from Received bet: 2 from 5
+Waiting for bet from Received bet: 3 from 6
+It's a draw between players: 4 5 6 
+Received winnings confirmation from 4
+Received winnings confirmation from 5
+Received winnings confirmation from 6
+Asking player 4 if they want to continue...
+Asking player 5 if they want to continue...
+Player 5 wants to continue.
+Asking player 6 if they want to continue...
+Player 6 wants to continue.
+No incoming connections after 5 seconds. Continuing...
+Players connected, starting the game...
+Received round start confirmation from 5
+Received round start confirmation from 6
+Dealt table card: 4 of Spades
+Received card confirmation from 5
+Received card confirmation from 6
+Dealt table card: Jack of Diamonds
+Received card confirmation from 5
+Received card confirmation from 6
+Dealt table card: 2 of Clubs
+Received card confirmation from 5
+Received card confirmation from 6
+Dealt card to player 5: 7 of Diamonds
+Received card confirmation from 5
+Dealt card to player 6: 8 of Clubs
+Received card confirmation from 6
+Dealt card to player 5: 10 of Diamonds
+Received card confirmation from 5
+Dealt card to player 6: 10 of Spades
+Received card confirmation from 6
+Waiting for bet from Error receiving bet from 5
+terminate called after throwing an instance of 'std::invalid_argument'
+  what():  stoi
+Aborted (core dumped)
+
+
+
+Klient 1:
+
+konrad@konrad-virtual-machine:~/Desktop/pokerek$ ./klient 127.0.0.1 8080
+Connected to server at 127.0.0.1 on port 8080
+Your balance is: 1000
+Round starting...
+Table cards: 
+9 of Spades
+7 of Spades
+King of Spades
+Your cards: 
+3 of Hearts
+Ace of Spades
+Enter your bet: 1
+You won: 2
+Continue? (y/n): 
+y
+Your balance is: 1001
+Round starting...
+Table cards: 
+Queen of Diamonds
+7 of Hearts
+King of Hearts
+Your cards: 
+Ace of Diamonds
+10 of Hearts
+Enter your bet: 1
+It's a tie! You receive: 2
+Continue? (y/n): n
+Your balance is: 1002
+
+
+
+Klient 2:
+
+konrad@konrad-virtual-machine:~/Desktop/pokerek$ ./klient 127.0.0.1 8080
+Connected to server at 127.0.0.1 on port 8080
+Your balance is: 1000
+Round starting...
+Table cards: 
+9 of Spades
+7 of Spades
+King of Spades
+Your cards: 
+5 of Diamonds
+6 of Hearts
+Enter your bet: 1
+You lost. Better luck next time!
+y
+Continue? (y/n): Your balance is: 999
+Round starting...
+Table cards: 
+Queen of Diamonds
+7 of Hearts
+King of Hearts
+Your cards: 
+Jack of Spades
+2 of Spades
+Enter your bet: 2
+It's a tie! You receive: 2
+Continue? (y/n): y
+Your balance is: 999
+Round starting...
+Table cards: 
+4 of Spades
+Jack of Diamonds
+2 of Clubs
+Your cards: 
+7 of Diamonds
+10 of Diamonds
+Enter your bet: ^C
+
+
+
+Klient 3:
+
+konrad@konrad-virtual-machine:~/Desktop/pokerek$ ./klient 127.0.0.1 8080
+Connected to server at 127.0.0.1 on port 8080
+Your balance is: 1000
+Round starting...
+Table cards: 
+Queen of Diamonds
+7 of Hearts
+King of Hearts
+Your cards: 
+Jack of Clubs
+8 of Diamonds
+Enter your bet: 3
+It's a tie! You receive: 2
+Continue? (y/n): y
+Your balance is: 999
+Round starting...
+Table cards: 
+4 of Spades
+Jack of Diamonds
+2 of Clubs
+Your cards: 
+8 of Clubs
+10 of Spades
+^C
